@@ -174,7 +174,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center"
             variants={containerVariants}
           >
             {/* 산카쿠 라멘 */}
