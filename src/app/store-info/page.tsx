@@ -34,37 +34,89 @@ export default function StoreInfo() {
 
   const stores = [
     {
-      name: "강남점",
-      address: "서울특별시 강남구 테헤란로 123",
-      phone: "02-1234-5678",
-      hours: {
-        weekday: "11:00 - 22:00",
-        weekend: "11:00 - 23:00",
-        holiday: "11:00 - 21:00",
+      name: "산카쿠 전대본점",
+      address: "광주 북구 용봉로138번길 24 1층",
+      roadAddress: "광주 북구 중흥동 337-4",
+      phone: "0507-1308-3995",
+      description:
+        "광주맛집, 광주전대 인근에서 맛있는 오니기리를 즐길 수 있는 산카쿠 전대본점은 전대후문에서 도보 약 5분 거리에 위치하고 있습니다.",
+      accessInfo: {
+        walk: [
+          "전대 후문에서 도보 약 5분",
+          "광주역에서 차량 5분",
+          "북구보건소에서 3분",
+          "북구청에서 도보 5분",
+          "메가박스 전대에서 도보 6분",
+        ],
+        car: ["효죽 공영주차장(1시간 무료) 이용 가능"],
       },
-      features: ["주차 가능", "단체 예약 가능", "포장 가능"],
+      hours: {
+        wed: "11:00 - 20:30",
+        thu: "11:00 - 20:30",
+        fri: "11:00 - 20:30",
+        sat: "11:00 - 20:30",
+        sun: "11:00 - 20:30",
+        mon: "휴무",
+        tue: "11:00 - 20:30",
+      },
+      features: ["수제 오니기리", "라멘", "우동", "일본 가정식"],
+      mapUrl:
+        "https://map.naver.com/p/entry/place/1477045231?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202509101426&locale=ko&svcName=map_pcv5",
     },
     {
-      name: "홍대점",
-      address: "서울특별시 마포구 홍대로 456",
-      phone: "02-2345-6789",
-      hours: {
-        weekday: "11:00 - 22:00",
-        weekend: "11:00 - 23:00",
-        holiday: "11:00 - 21:00",
+      name: "산카쿠 인계점",
+      address: "경기 수원시 팔달구 인계로124번길 27-10 1층 115호, 116호",
+      roadAddress: "경기 수원시 팔달구 인계동 1040",
+      phone: "0507-1412-2158",
+      description: "수원 인계동에 위치한 산카쿠 인계점입니다.",
+      accessInfo: {
+        walk: ["수원시청역 6번 출구에서 508m"],
+        car: [
+          "주차가능(유료)",
+          "추가 요금: 60분당 6,000원, 최대 100,000원",
+          "엘리시아 타워 건물 주차 가능 (1시간 무료 주차)",
+        ],
       },
-      features: ["포장 가능", "배달 가능"],
+      hours: {
+        wed: "11:00 - 20:30",
+        thu: "11:00 - 20:30",
+        fri: "11:00 - 20:30",
+        sat: "11:00 - 20:30",
+        sun: "11:00 - 20:30",
+        mon: "휴무",
+        tue: "11:00 - 20:30",
+      },
+      features: ["수제 오니기리", "라멘", "우동", "일본 가정식"],
+      mapUrl:
+        "https://map.naver.com/p/search/%EC%82%B0%EC%B9%B4%EC%BF%A0%20%EB%9D%BC%EB%A9%98/place/2096410906?placePath=/home?entry=pll&from=nx&fromNxList=true&from=map&fromPanelNum=2&timestamp=202509101427&locale=ko&svcName=map_pcv5&searchText=%EC%82%B0%EC%B9%B4%EC%BF%A0%20%EB%9D%BC%EB%A9%98&placeSearchOption=entry%3Dpll%26fromNxList%3Dtrue%26x%3D126.928950%26y%3D35.171035&searchType=place",
     },
     {
-      name: "부산점",
-      address: "부산광역시 해운대구 해운대로 789",
-      phone: "051-3456-7890",
-      hours: {
-        weekday: "11:00 - 22:00",
-        weekend: "11:00 - 23:00",
-        holiday: "11:00 - 21:00",
+      name: "산카쿠 충대점",
+      address: "대전 유성구 궁동로18번길 13 1층 산카쿠",
+      roadAddress: "대전 유성구 궁동 395-11",
+      phone: "0507-1441-0480",
+      description:
+        "충남대학교 바로 옆에 위치하고 있는 대전 궁동 맛집 산카쿠충대점입니다. 대전하면 성심당 많이들 오시잖아요? 성심당가시기 전에 산카쿠충대점에 들려서 맛있는 한 끼 하고 가시는건 어떠신가요?",
+      accessInfo: {
+        walk: [
+          "네이버지도에 '산카쿠충대점' 검색하고 오시면 편리합니다!",
+          "가장 가까운 역: 유성온천역 (도보 15분, 차량 5분)",
+          "102번, 105번, 106번, 108번, 113번 버스 탑승 후 충남대 정문에서 하차하면 도보 3분",
+        ],
+        car: ["유성온천역에서 차량으로 5분", "충남대학교 바로 옆에 위치"],
       },
-      features: ["바다 전망", "주차 가능", "단체 예약 가능"],
+      hours: {
+        wed: "11:00 - 20:30",
+        thu: "11:00 - 20:30",
+        fri: "11:00 - 20:30",
+        sat: "11:00 - 20:30",
+        sun: "11:00 - 20:30",
+        mon: "휴무",
+        tue: "11:00 - 20:30",
+      },
+      features: ["수제 오니기리", "라멘", "우동", "일본 가정식"],
+      mapUrl:
+        "https://map.naver.com/p/search/%EC%82%B0%EC%B9%B4%EC%BF%A0%20%EB%9D%BC%EB%A9%98/place/1483231321?placePath=%3Fentry%3Dpll%26from%3Dnx%26fromNxList%3Dtrue&placeSearchOption=entry%3Dpll%26fromNxList%3Dtrue%26x%3D126.928950%26y%3D35.171035&searchType=place",
     },
   ];
 
@@ -99,7 +151,7 @@ export default function StoreInfo() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid lg:grid-cols-1 gap-12"
             variants={containerVariants}
           >
             {stores.map((store, index) => (
@@ -108,40 +160,164 @@ export default function StoreInfo() {
                 className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
                 variants={storeCardVariants}
               >
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {store.name}
-                  </h3>
-                  <p className="text-gray-600">{store.address}</p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <span className="text-red-600 mr-3">📞</span>
-                    <span className="text-gray-700">{store.phone}</span>
-                  </div>
-
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {/* Left Column - Basic Info */}
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">영업시간</h4>
-                    <div className="space-y-1 text-gray-600">
-                      <div>월-금: {store.hours.weekday}</div>
-                      <div>토-일: {store.hours.weekend}</div>
-                      <div>공휴일: {store.hours.holiday}</div>
+                    <div className="mb-6">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                        {store.name}
+                      </h3>
+                      <div className="mb-3">
+                        <div className="relative w-50 h-50 mb-3">
+                          <Image
+                            src="/SANKAKU_LOGO.jpg"
+                            alt="산카쿠 로고"
+                            className="object-cover rounded-lg"
+                            quality={100}
+                            width={200}
+                            height={200}
+                            priority
+                          />
+                        </div>
+                        <div>
+                          <p className="text-gray-600 mb-1">{store.address}</p>
+                          <p className="text-gray-500 text-sm">
+                            {store.roadAddress}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-2">매장 특징</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {store.features.map((feature, featureIndex) => (
-                        <span
-                          key={featureIndex}
-                          className="bg-black text-white px-3 py-1 rounded-full text-sm"
-                        >
-                          {feature}
+                    <div className="space-y-4">
+                      <div className="flex items-center">
+                        <span className="text-red-600 mr-3 text-xl">📞</span>
+                        <span className="text-gray-700 font-semibold">
+                          {store.phone}
                         </span>
-                      ))}
+                      </div>
+
+                      <div>
+                        <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                          매장 소개
+                        </h4>
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                          {store.description}
+                        </p>
+                        <a
+                          href={store.mapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors inline-block"
+                        >
+                          지도에서 보기
+                        </a>
+                      </div>
                     </div>
+                  </div>
+
+                  {/* Right Column - Hours & Access */}
+                  <div>
+                    <div className="mb-6">
+                      <h4 className="font-bold text-gray-900 mb-4 text-lg">
+                        영업시간
+                      </h4>
+
+                      {/* 공통 안내 */}
+                      <div className="mb-4 p-3 bg-blue-50 rounded-lg">
+                        <div className="text-sm text-gray-700">
+                          <div className="flex justify-between mb-1">
+                            <span>영업시간:</span>
+                            <span className="font-semibold">11:00 - 20:30</span>
+                          </div>
+                          <div className="flex justify-between mb-1">
+                            <span>브레이크타임:</span>
+                            <span className="font-semibold">15:00 - 17:00</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>라스트오더:</span>
+                            <span className="font-semibold">20:00</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 요일별 영업시간 */}
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">월요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.mon}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">화요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.tue}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">수요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.wed}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">목요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.thu}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">금요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.fri}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">토요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.sat}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">일요일</span>
+                          <span className="font-semibold text-gray-900">
+                            {store.hours.sun}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {store.accessInfo.walk.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                          도보 이용 시
+                        </h4>
+                        <ul className="space-y-1 text-sm text-gray-600">
+                          {store.accessInfo.walk.map((access, accessIndex) => (
+                            <li key={accessIndex} className="flex items-start">
+                              <span className="mr-2">•</span>
+                              <span>{access}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {store.accessInfo.car.length > 0 && (
+                      <div>
+                        <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                          차량 이용 시
+                        </h4>
+                        <ul className="space-y-1 text-sm text-gray-600">
+                          {store.accessInfo.car.map((access, accessIndex) => (
+                            <li key={accessIndex} className="flex items-start">
+                              <span className="mr-2">•</span>
+                              <span>{access}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -150,253 +326,36 @@ export default function StoreInfo() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Notice Section */}
       <motion.section className="py-24 bg-gray-50" variants={containerVariants}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">매장 위치</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">매장 안내</h2>
             <p className="text-xl text-gray-600">
-              지도를 통해 매장 위치를 확인하세요
+              산카쿠는 수제 오니기리, 라멘, 우동을 전문으로 하는 일본 가정식
+              브랜드입니다
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-gray-200 rounded-3xl h-96 flex items-center justify-center"
+            className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto"
             variants={itemVariants}
           >
-            <div className="text-center text-gray-600">
-              <div className="text-6xl mb-6">🗺️</div>
-              <p className="text-xl font-medium">지도가 여기에 표시됩니다</p>
-              <p className="text-gray-500 mt-2">실시간 위치 확인 가능</p>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Business Hours Section */}
-      <motion.section className="py-24 bg-white" variants={containerVariants}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              영업시간 안내
-            </h2>
-            <p className="text-xl text-gray-600">
-              매장별 영업시간을 확인하세요
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-50 rounded-2xl p-8"
-            variants={itemVariants}
-          >
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  평일 (월-금)
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">오픈</span>
-                    <span className="font-bold text-gray-900">11:00</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">마감</span>
-                    <span className="font-bold text-gray-900">22:00</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-700">라스트 오더</span>
-                    <span className="font-bold text-gray-900">21:30</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  주말 (토-일)
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">오픈</span>
-                    <span className="font-bold text-gray-900">11:00</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">마감</span>
-                    <span className="font-bold text-gray-900">23:00</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-700">라스트 오더</span>
-                    <span className="font-bold text-gray-900">22:30</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <motion.div
-              className="mt-8 p-4 bg-yellow-50 rounded-lg"
-              variants={itemVariants}
-            >
-              <p className="text-gray-700 text-center">
-                <strong>공휴일:</strong> 11:00 - 21:00 (라스트 오더 20:30)
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Contact Section */}
-      <motion.section className="py-24 bg-gray-50" variants={containerVariants}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              문의 및 예약
-            </h2>
-            <p className="text-xl text-gray-600">
-              궁금한 점이 있으시면 언제든 연락주세요
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-2 gap-12"
-            variants={containerVariants}
-          >
-            <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg"
-              variants={storeCardVariants}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                예약 문의
+            <div className="text-center">
+              <div className="text-6xl mb-6">🍜</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                매장 이용 안내
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <span className="text-red-600 mr-3">📞</span>
-                  <span className="text-gray-700">02-1234-5678</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-red-600 mr-3">📧</span>
-                  <span className="text-gray-700">reservation@sankaku.kr</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-red-600 mr-3">⏰</span>
-                  <span className="text-gray-700">평일 09:00 - 18:00</span>
-                </div>
+              <div className="space-y-3 text-gray-600">
+                <p>• 설날, 추석 당일은 쉽니다</p>
+                <p>• 모든 매장에서 브레이크타임(15:00-17:00) 운영</p>
+                <p>• 라스트오더는 20:00입니다</p>
+                <p>• 매장별로 주차장 이용 가능</p>
               </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg"
-              variants={storeCardVariants}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                일반 문의
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <span className="text-red-600 mr-3">📞</span>
-                  <span className="text-gray-700">02-1234-5678</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-red-600 mr-3">📧</span>
-                  <span className="text-gray-700">info@sankaku.kr</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-red-600 mr-3">📍</span>
-                  <span className="text-gray-700">
-                    서울특별시 강남구 테헤란로 123
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src="/SANKAKU_LOGO.jpg"
-                    alt="산카쿠 로고"
-                    fill
-                    className="object-cover rounded-lg"
-                    sizes="40px"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">산카쿠</h3>
-                  <p className="text-sm text-gray-400">SANKAKU</p>
-                </div>
-              </div>
-              <p className="text-gray-400 mb-6 max-w-md">
-                정통 일본 라멘의 맛을 그대로 담아 여러분께 특별한 식사 경험을
-                제공합니다.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">빠른 링크</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a
-                    href="/brand-story"
-                    className="hover:text-white transition-colors"
-                  >
-                    브랜드 스토리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/menu"
-                    className="hover:text-white transition-colors"
-                  >
-                    메뉴
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/store-info"
-                    className="hover:text-white transition-colors"
-                  >
-                    매장안내
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/customer-voice"
-                    className="hover:text-white transition-colors"
-                  >
-                    고객의 소리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/franchise"
-                    className="hover:text-white transition-colors"
-                  >
-                    창업안내
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">연락처</h4>
-              <div className="space-y-3 text-gray-400">
-                <div>📞 02-1234-5678</div>
-                <div>📧 info@sankaku.kr</div>
-                <div>📍 서울특별시 강남구</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 산카쿠. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </motion.div>
   );
 }

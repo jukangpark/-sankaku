@@ -53,7 +53,7 @@ export default function CustomerVoice() {
     },
     {
       name: "박민수",
-      rating: 4,
+      rating: 5,
       date: "2024.01.08",
       content:
         "우동이 정말 쫄깃하고 맛있었습니다. 가격도 합리적이고 분위기도 좋아서 만족스러웠어요.",
@@ -71,7 +71,7 @@ export default function CustomerVoice() {
     },
     {
       name: "정현우",
-      rating: 4,
+      rating: 5,
       date: "2024.01.03",
       content:
         "매장이 깔끔하고 음식도 맛있었습니다. 다음에 가족들과 함께 방문하고 싶어요.",
@@ -133,7 +133,7 @@ export default function CustomerVoice() {
               고객 만족도
             </h2>
             <p className="text-xl text-gray-600">
-              총 {reviews.length}개의 리뷰로 구성된 평균 평점입니다
+              총 3,452 개의 리뷰로 구성된 평균 평점입니다
             </p>
           </motion.div>
 
@@ -169,7 +169,7 @@ export default function CustomerVoice() {
       </section>
 
       {/* Reviews Section */}
-      <motion.section className="py-24 bg-gray-50" variants={containerVariants}>
+      <motion.section className="py-24" variants={containerVariants}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">고객 리뷰</h2>
@@ -218,101 +218,8 @@ export default function CustomerVoice() {
         </div>
       </motion.section>
 
-      {/* Review Form Section */}
-      <motion.section className="py-24 bg-white" variants={containerVariants}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              리뷰 작성하기
-            </h2>
-            <p className="text-xl text-gray-600">
-              산카쿠를 방문하신 후기를 남겨주세요
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-50 rounded-2xl p-8"
-            variants={itemVariants}
-          >
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    이름
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black"
-                    placeholder="이름을 입력하세요"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    방문 매장
-                  </label>
-                  <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black">
-                    <option>매장을 선택하세요</option>
-                    <option>강남점</option>
-                    <option>홍대점</option>
-                    <option>부산점</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  주문 메뉴
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black"
-                  placeholder="주문하신 메뉴를 입력하세요"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  평점
-                </label>
-                <div className="flex space-x-2">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <button
-                      key={star}
-                      type="button"
-                      className="text-2xl text-gray-300 hover:text-yellow-500 focus:outline-none"
-                    >
-                      ★
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  리뷰 내용
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black resize-none"
-                  placeholder="방문 후기를 자유롭게 작성해주세요"
-                ></textarea>
-              </div>
-
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors"
-                >
-                  리뷰 등록하기
-                </button>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      </motion.section>
-
       {/* FAQ Section */}
-      <motion.section className="py-24 bg-gray-50" variants={containerVariants}>
+      <motion.section className="py-24" variants={containerVariants}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -378,94 +285,6 @@ export default function CustomerVoice() {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src="/SANKAKU_LOGO.jpg"
-                    alt="산카쿠 로고"
-                    fill
-                    className="object-cover rounded-lg"
-                    sizes="40px"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">산카쿠</h3>
-                  <p className="text-sm text-gray-400">SANKAKU</p>
-                </div>
-              </div>
-              <p className="text-gray-400 mb-6 max-w-md">
-                정통 일본 라멘의 맛을 그대로 담아 여러분께 특별한 식사 경험을
-                제공합니다.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">빠른 링크</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a
-                    href="/brand-story"
-                    className="hover:text-white transition-colors"
-                  >
-                    브랜드 스토리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/menu"
-                    className="hover:text-white transition-colors"
-                  >
-                    메뉴
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/store-info"
-                    className="hover:text-white transition-colors"
-                  >
-                    매장안내
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/customer-voice"
-                    className="hover:text-white transition-colors"
-                  >
-                    고객의 소리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/franchise"
-                    className="hover:text-white transition-colors"
-                  >
-                    창업안내
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">연락처</h4>
-              <div className="space-y-3 text-gray-400">
-                <div>📞 02-1234-5678</div>
-                <div>📧 info@sankaku.kr</div>
-                <div>📍 서울특별시 강남구</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 산카쿠. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </motion.div>
   );
 }

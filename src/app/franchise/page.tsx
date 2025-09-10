@@ -40,69 +40,103 @@ export default function Franchise() {
     },
   };
 
-  const franchiseInfo = [
+  const performanceData = [
     {
-      title: "브랜드 가치",
-      description: "13년간 쌓아온 신뢰와 노하우",
-      icon: "🏆",
-      details: [
-        "검증된 브랜드 인지도",
-        "정통 일본 라멘 레시피",
-        "체계적인 운영 시스템",
-        "지속적인 마케팅 지원",
-      ],
+      title: "11회전",
+      subtitle: "테이블 회전율",
+      note: "*25년 1월 광주 전대점",
+      icon: "🔄",
     },
     {
-      title: "창업 지원",
-      description: "처음부터 끝까지 함께하는 파트너십",
-      icon: "🤝",
-      details: [
-        "매장 설계 및 인테리어",
-        "셰프 교육 및 기술 전수",
-        "오픈 준비 및 마케팅",
-        "지속적인 운영 컨설팅",
-      ],
+      title: "30.7%",
+      subtitle: "평균 수익률",
+      note: "*본점기준이며 가맹점은 다를 수 있습니다.",
+      icon: "📈",
     },
     {
-      title: "수익성",
-      description: "검증된 비즈니스 모델",
+      title: "314만원",
+      subtitle: "일 매출",
+      note: "*25년 4월 대전 충남대점",
       icon: "💰",
-      details: [
-        "높은 고객 만족도",
-        "안정적인 매출 구조",
-        "효율적인 원가 관리",
-        "지속적인 성장 가능성",
-      ],
+    },
+    {
+      title: "240%",
+      subtitle: "타 브랜드 대비 마진율",
+      note: "*25년 1월 매출 자료 집계 기준",
+      icon: "📊",
     },
   ];
 
-  const requirements = [
+  const menuCategories = [
     {
-      title: "창업 자격",
-      items: [
-        "성실하고 열정적인 창업 의지",
-        "최소 3억원 이상의 창업 자금",
-        "적합한 매장 위치 확보",
-        "식품업계 경험 우대",
-      ],
+      title: "라멘세트",
+      description: "시그니처 조합. 푸짐한 양. 가성비 9,900원 형성",
+      detail:
+        "일본 현지의 돈사골 맛을 한국인 입맛에 맞게 담백하게 계량한 시그니처 메뉴",
+      types: "종류: 산카쿠, 카라이 산카쿠, 미소 돈코츠, 카라이 미소 돈코츠 등",
+      special: "특별메뉴: 들깨해장라멘",
     },
     {
-      title: "매장 조건",
-      items: [
-        "면적: 50-80평 (150-240㎡)",
-        "주차 공간 확보",
-        "좋은 접근성과 가시성",
-        "적절한 임대료 수준",
-      ],
+      title: "온우동",
+      description: "가쓰오부시와 쑥갓으로 맛을 낸 깊은 맛의 온우동",
+      types: "종류: 카케우동, 니꾸우동, 유부우동, 김치유부 우동",
+      special: "특별메뉴: 들깨크림우동",
     },
     {
-      title: "지원 내용",
-      items: [
-        "브랜드 라이센스 제공",
-        "전문 셰프 교육",
-        "매장 설계 및 인테리어",
-        "마케팅 및 홍보 지원",
-      ],
+      title: "냉라멘(시즌메뉴)",
+      description: "가쓰오부시로 맛을 낸 시원하고 새콤한 시즌메뉴",
+      types: "종류: 히야시츄카, 참깨마요 히야시츄카",
+    },
+    {
+      title: "나만의 오니기리",
+      description: "취향에 맞게 선택하는 두가지 맛조합!",
+      detail: "한 오니기리 안에 원하는 취향으로 다양한 조합 가능",
+    },
+  ];
+
+  const advantages = [
+    "감성적인 인테리어와 미니멀한 브랜드 이미지",
+    "메뉴를 선택하는 과정부터 게임의 캐릭터를 고르는 느낌으로 젊은 고객과의 소통을 하는 메뉴구성",
+    "라멘+오니기리 세트가 9,900원으로 고물가 시대에 가성비 좋음",
+    "희소성 있는 메뉴 구성 (한정판, 프리미엄 조합)",
+    "SNS에서 유행하는 비주얼과 조합",
+    "풀코스처럼 구성된 라멘+오니기리+디저트",
+    "체계적인 마케팅팀 구성으로 직접 기획하고 운영하여 빠른 트렌드를 반영",
+  ];
+
+  const processSteps = [
+    {
+      step: "01",
+      title: "가맹문의",
+      description:
+        "홈페이지 또는 유선 문의 시 개설 절차 안내와 희망지역, 상권조사 등 창업관련 내용 상담 진행",
+    },
+    {
+      step: "02",
+      title: "상권조사",
+      description:
+        "지역상권을 분석 및 경쟁업체 유동인구 향후 상권변화까지 고려하여 후보지 선정",
+    },
+    {
+      step: "03",
+      title: "임대차 계약 및 가맹 계약",
+      description: "임대차 계약 및 가맹계약 일정 협의",
+    },
+    {
+      step: "04",
+      title: "인테리어 공사",
+      description:
+        "최적의 매장 운영을 위한 인테리어 도면 및 3D디자인 제작 및 시공",
+    },
+    {
+      step: "05",
+      title: "가맹점주님 교육 및 오픈시뮬레이션",
+      description: "현 매장에 맞는 교육 및 메뉴, 서비스 교육 실시",
+    },
+    {
+      step: "06",
+      title: "GRAND OPEN 및 슈퍼바이저 지원",
+      description: "슈퍼바이저를 파견하여 종합적인 지도 및 사후관리",
     },
   ];
 
@@ -128,331 +162,494 @@ export default function Franchise() {
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             variants={itemVariants}
           >
-            산카쿠와 함께 정통 일본 라멘의 맛을 전국에 전파해보세요
+            창업에 필요한 모든 정보를 확인하세요
           </motion.p>
         </div>
       </section>
+      <section className="bg-white text-center">
+        {/* PDF 다운로드 버튼 */}
+        <motion.div className="mt-8" variants={itemVariants}>
+          <a
+            href="/franchise/가맹점문의.pdf"
+            download="가맹점문의.pdf"
+            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors font-semibold"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            가맹점 문의.pdf 다운로드
+          </a>
+        </motion.div>
+      </section>
 
-      {/* Franchise Benefits */}
+      {/* Performance Data */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              산카쿠 프랜차이즈의 특별함
-            </h2>
-            <p className="text-xl text-gray-600">
-              왜 산카쿠를 선택해야 할까요?
-            </p>
-          </motion.div>
-
           <motion.div
-            className="grid md:grid-cols-3 gap-12"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={containerVariants}
           >
-            {franchiseInfo.map((info, index) => (
+            {performanceData.map((data, index) => (
               <motion.div
                 key={index}
-                className="text-center"
+                className="text-center bg-gray-50 rounded-2xl p-8"
                 variants={itemVariants}
               >
-                <div className="w-20 h-20 bg-black rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-3xl">{info.icon}</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {info.title}
+                <div className="text-4xl mb-4">{data.icon}</div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                  {data.title}
                 </h3>
-                <p className="text-gray-600 mb-6">{info.description}</p>
-                <ul className="space-y-2 text-left">
-                  {info.details.map((detail, detailIndex) => (
-                    <li
-                      key={detailIndex}
-                      className="flex items-center text-gray-700"
-                    >
-                      <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-lg font-semibold text-gray-700 mb-2">
+                  {data.subtitle}
+                </p>
+                <p className="text-sm text-gray-500">{data.note}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Requirements Section */}
-      <motion.section className="py-24 bg-gray-50" variants={containerVariants}>
+      {/* 창업 경쟁력 안내 */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              창업 요건 및 지원
+              창업 경쟁력 안내
             </h2>
-            <p className="text-xl text-gray-600">
-              창업에 필요한 모든 정보를 확인하세요
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-3 gap-8 mb-12"
+            variants={containerVariants}
+          >
+            <motion.div
+              className="bg-white rounded-2xl p-8 text-center"
+              variants={cardVariants}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                1. 홀 영업
+              </h3>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-2xl p-8 text-center"
+              variants={cardVariants}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                2. 배달 판매
+              </h3>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-2xl p-8 text-center"
+              variants={cardVariants}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                3. 포장 판매
+              </h3>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="bg-white rounded-2xl p-8 text-center"
+            variants={itemVariants}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              1석 3조의 매출 구조로 효율성을 높이다
+            </h3>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              매장 하나를 운영하면서도 전통적인 홀/테이크 아웃/배달 모두 운영할
+              수 있는 시스템으로
+              <br />
+              1개의 매장에서도 3가지의 구조를 가질 수 있도록 구성했습니다.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 매장 운영의 효율성을 높이다 */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-20" variants={itemVariants}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              매장 운영의 효율성을 높이다
+            </h2>
           </motion.div>
 
           <motion.div
             className="grid md:grid-cols-3 gap-8"
             variants={containerVariants}
           >
-            {requirements.map((req, index) => (
+            <motion.div
+              className="bg-gray-50 rounded-2xl p-8"
+              variants={cardVariants}
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                셀프 시스템
+              </h3>
+              <p className="text-gray-600">
+                주문/배식/퇴식을 셀프로 운영인력을 최소화하여 효율성을 높이고
+                매출을 증대시킵니다. 홀은 셀프 시스템을 도입함으로써 효율성을
+                극대화 시켰습니다.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-gray-50 rounded-2xl p-8"
+              variants={cardVariants}
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                조리의 간편성
+              </h3>
+              <p className="text-gray-600">
+                소스와 고기, 그리고 오니기리 재료들의 작업이 완료되어 각 매장에
+                공급됨으로써 편의성을 갖추며 맛과 퀄리티 유지.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-gray-50 rounded-2xl p-8"
+              variants={cardVariants}
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                구성의 완성도
+              </h3>
+              <p className="text-gray-600">
+                주메뉴와 함께 골라먹는 재미, 마지막으로 디저트를 제공함과 동시에
+                가격과 고객 만족을 모두 갖추었습니다.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 메뉴들 사진과 메뉴 설명 */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-20" variants={itemVariants}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              메뉴들 사진과 메뉴 설명
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 gap-8"
+            variants={containerVariants}
+          >
+            {menuCategories.map((menu, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg"
+                className="bg-white rounded-2xl p-8"
                 variants={cardVariants}
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  {req.title}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {menu.title}
                 </h3>
-                <ul className="space-y-3">
-                  {req.items.map((item, itemIndex) => (
-                    <li
-                      key={itemIndex}
-                      className="flex items-start text-gray-700"
-                    >
-                      <span className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-600 mb-4">{menu.description}</p>
+                {menu.detail && (
+                  <p className="text-gray-600 mb-4">{menu.detail}</p>
+                )}
+                {menu.types && (
+                  <p className="text-sm text-gray-500 mb-2">{menu.types}</p>
+                )}
+                {menu.special && (
+                  <p className="text-sm text-gray-500">{menu.special}</p>
+                )}
               </motion.div>
             ))}
           </motion.div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Investment Info */}
-      <motion.section className="py-24 bg-white" variants={containerVariants}>
+      {/* 왜 젊은층들에게 인기가 있는가? */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">투자 정보</h2>
-            <p className="text-xl text-gray-600">
-              창업에 필요한 투자 비용을 안내해드립니다
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              왜 젊은층들에게 인기가 있는가?
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+          >
+            {advantages.map((advantage, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-6"
+                variants={cardVariants}
+              >
+                <p className="text-gray-700">{advantage}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 타사의 재료공급과 산카쿠의 재료공급의 차이점 */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-20" variants={itemVariants}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              타사의 재료공급과 산카쿠의 재료공급의 차이점
+            </h2>
+            <h3 className="text-2xl font-semibold text-gray-700 mb-6">
+              산카쿠 브랜드는 초보자도 가능
+            </h3>
+          </motion.div>
+
+          <motion.div
+            className="bg-white rounded-2xl p-8 mb-12"
+            variants={itemVariants}
+          >
+            <p className="text-lg text-gray-700 leading-relaxed text-center">
+              전문 조리사가 산카쿠 전문 재료 가공 공장에서 조리하여 안전하게
+              배송해주기 때문에
+              <br />
+              패스트푸드 매장처럼 편리하고 비전문가여도 전국 어느 지점에서도
+              퀄리티 높은 동일한 맛으로 간단히 조리 가능합니다.
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-gray-50 rounded-2xl p-8"
+            className="bg-white rounded-2xl p-8"
             variants={itemVariants}
           >
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  초기 투자 비용
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">프랜차이즈 라이센스</span>
-                    <span className="font-bold text-gray-900">₩30,000,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">매장 인테리어</span>
-                    <span className="font-bold text-gray-900">₩50,000,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">주방 설비</span>
-                    <span className="font-bold text-gray-900">₩40,000,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">초기 재고</span>
-                    <span className="font-bold text-gray-900">₩10,000,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-700">기타 비용</span>
-                    <span className="font-bold text-gray-900">₩20,000,000</span>
-                  </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              산카쿠의 공장과 타브랜드 공장의 차이점
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <span className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">
+                    매장 운영 경험을 바탕으로 현장에서 바로 쓰기 좋은 형태로
+                    제조.
+                  </span>
                 </div>
-                <div className="mt-6 p-4 bg-black text-white rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg">총 투자 비용</span>
-                    <span className="text-2xl font-bold">₩150,000,000</span>
-                  </div>
+                <div className="flex items-start">
+                  <span className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">
+                    불필요한 공정을 줄이고 해동, 재가공 등의 번거로움 최소화.
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <span className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">
+                    레시피 설계 단계부터 가맹점 조리 효율 고려.
+                  </span>
                 </div>
               </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  운영 비용
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">로열티 (매출의 5%)</span>
-                    <span className="font-bold text-gray-900">
-                      월 매출 기준
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">광고비 (매출의 2%)</span>
-                    <span className="font-bold text-gray-900">
-                      월 매출 기준
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">인건비</span>
-                    <span className="font-bold text-gray-900">
-                      월 ₩8,000,000
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="text-gray-700">임대료</span>
-                    <span className="font-bold text-gray-900">
-                      월 ₩3,000,000
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-700">기타 운영비</span>
-                    <span className="font-bold text-gray-900">
-                      월 ₩2,000,000
-                    </span>
-                  </div>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <span className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">
+                    소스, 속재료, 육수까지 전용 생산 시스템 구축.
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <span className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">
+                    위생 기준이 높고, 유통과 냉장 포장 시스템이 체계화됨.
+                  </span>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Process Section */}
-      <motion.section className="py-24 bg-gray-50" variants={containerVariants}>
+      {/* 우리의 방향성과 어떤 재료를 사용하는지 */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              창업 프로세스
+              우리의 방향성과 어떤 재료를 사용하는지
             </h2>
-            <p className="text-xl text-gray-600">
-              창업부터 오픈까지의 과정을 단계별로 안내해드립니다
-            </p>
-          </motion.div>
-
-          <motion.div className="space-y-8" variants={containerVariants}>
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
-              variants={processVariants}
-            >
-              <div className="md:w-1/4 text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                  1
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">
-                  상담 및 신청
-                </h3>
-              </div>
-              <div className="md:w-3/4">
-                <p className="text-gray-600">
-                  창업 문의 후 상담을 통해 산카쿠 프랜차이즈에 대한 이해를 돕고,
-                  창업 의향서를 작성하여 신청해주세요.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
-              variants={processVariants}
-            >
-              <div className="md:w-1/4 text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                  2
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">자격 심사</h3>
-              </div>
-              <div className="md:w-3/4">
-                <p className="text-gray-600">
-                  창업 자격과 자금력을 검토하여 적합성을 판단합니다. 심사 기간은
-                  약 2주 정도 소요됩니다.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
-              variants={processVariants}
-            >
-              <div className="md:w-1/4 text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                  3
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">계약 체결</h3>
-              </div>
-              <div className="md:w-3/4">
-                <p className="text-gray-600">
-                  자격 심사 통과 후 프랜차이즈 계약을 체결하고, 라이센스 비용을
-                  납부해주세요.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
-              variants={processVariants}
-            >
-              <div className="md:w-1/4 text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                  4
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">매장 준비</h3>
-              </div>
-              <div className="md:w-3/4">
-                <p className="text-gray-600">
-                  매장 위치 선정부터 인테리어, 주방 설비 설치까지 모든 과정을
-                  함께 진행합니다.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
-              variants={processVariants}
-            >
-              <div className="md:w-1/4 text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                  5
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">
-                  교육 및 오픈
-                </h3>
-              </div>
-              <div className="md:w-3/4">
-                <p className="text-gray-600">
-                  셰프 교육과 서비스 교육을 완료한 후 정식 오픈을 진행합니다.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Contact Form */}
-      <motion.section className="py-24 bg-white" variants={containerVariants}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-20" variants={itemVariants}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">창업 문의</h2>
-            <p className="text-xl text-gray-600">
-              산카쿠 프랜차이즈에 관심이 있으시면 언제든 연락주세요
-            </p>
           </motion.div>
 
           <motion.div
             className="bg-gray-50 rounded-2xl p-8"
             variants={itemVariants}
           >
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              맛과 위생은 절대 타협하지 않는 원칙
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                  🍜
+                </div>
+                <p className="text-gray-700">
+                  직접 개발한 산카쿠만의 육수, 최소한의 가공식품 사용
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                  🍙
+                </div>
+                <p className="text-gray-700">
+                  오니기리에 최적화된 국내산 프리미엄 김과 쌀, 직접 조리한
+                  속재료 사용
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                  🌿
+                </div>
+                <p className="text-gray-700">
+                  MSG를 최소화하고 자연의 감칠맛 위주로 설계
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 든든한 한끼의 식사를 대접하는 기업 */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-20" variants={itemVariants}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              든든한 한끼의 식사를 대접하는 기업
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="bg-white rounded-2xl p-8"
+            variants={itemVariants}
+          >
+            <div className="space-y-6 text-center">
+              <p className="text-lg text-gray-700">
+                단순히 한끼의 음식을 '파는' 기업이 아닌, 든든한 한끼를
+                '대접하는' 기업.
+              </p>
+              <p className="text-lg text-gray-700">
+                단순 프랜차이즈가 아닌, 제조+기술+브랜딩 융합형 시스템
+              </p>
+              <p className="text-lg text-gray-700">
+                제품 기획, 공장 생산, 물류, 교육 시스템까지 내재화
+              </p>
+              <p className="text-lg text-gray-700">
+                지역 상생, 장애인 고용, ESG 기반 공장 운영 계획
+              </p>
+              <p className="text-lg text-gray-700">
+                매장을 넘어 건강한 한 끼를 제공하는 사회적 식문화 브랜드
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="mt-12 bg-black text-white rounded-2xl p-8 text-center"
+            variants={itemVariants}
+          >
+            <h3 className="text-2xl font-bold mb-4">성과</h3>
+            <p className="text-lg mb-2">
+              창업 3개월 만에 광주에서 웨이팅 맛집 3위, 매출 6,500만원 달성
+            </p>
+            <p className="text-lg">
+              대전 충남대점은 첫 달 7,500 만원 기록하며 브랜드 성장 중
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 가맹절차 */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-20" variants={itemVariants}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">가맹절차</h2>
+          </motion.div>
+
+          <motion.div className="space-y-8" variants={containerVariants}>
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col md:flex-row items-center gap-8"
+                variants={processVariants}
+              >
+                <div className="md:w-1/4 text-center">
+                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {step.title}
+                  </h3>
+                </div>
+                <div className="md:w-3/4">
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 가맹점 문의 */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-20" variants={itemVariants}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              가맹점 문의
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="bg-gray-50 rounded-2xl p-8 text-center mb-12"
+            variants={itemVariants}
+          >
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                (주)해송NS 정지윤
+              </h3>
+              <p className="text-3xl font-bold text-black mb-4">
+                010-5841-0150
+              </p>
+              <p className="text-gray-600">
+                부재 시 문자 남겨주시면 순차적으로 응대해 드리겠습니다.
+              </p>
+            </div>
+            <p className="text-sm text-gray-500">
+              (주)해송NS는 (주)해송물산의 그룹사 입니다.
+            </p>
+          </motion.div>
+
+          {/* 문의 폼 */}
+          <motion.div
+            className="bg-gray-50 rounded-2xl p-8"
+            variants={itemVariants}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              창업 문의하기
+            </h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    이름
+                    이름 *
                   </label>
                   <input
                     type="text"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black"
                     placeholder="이름을 입력하세요"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    연락처
+                    연락처 *
                   </label>
                   <input
                     type="tel"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black"
                     placeholder="전화번호를 입력하세요"
                   />
@@ -472,10 +669,11 @@ export default function Franchise() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  희망 지역
+                  희망 지역 *
                 </label>
                 <input
                   type="text"
+                  required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black"
                   placeholder="창업을 희망하는 지역을 입력하세요"
                 />
@@ -496,10 +694,24 @@ export default function Franchise() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  문의 내용
+                  창업 자금 규모
+                </label>
+                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black">
+                  <option>자금 규모를 선택하세요</option>
+                  <option>1억원 이하</option>
+                  <option>1억원 ~ 2억원</option>
+                  <option>2억원 ~ 3억원</option>
+                  <option>3억원 이상</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  문의 내용 *
                 </label>
                 <textarea
                   rows={4}
+                  required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black resize-none"
                   placeholder="궁금한 점이나 문의사항을 자유롭게 작성해주세요"
                 ></textarea>
@@ -508,103 +720,15 @@ export default function Franchise() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors"
+                  className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors font-semibold"
                 >
-                  창업 문의하기
+                  문의하기
                 </button>
               </div>
             </form>
           </motion.div>
         </div>
-      </motion.section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src="/SANKAKU_LOGO.jpg"
-                    alt="산카쿠 로고"
-                    fill
-                    className="object-cover rounded-lg"
-                    sizes="40px"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">산카쿠</h3>
-                  <p className="text-sm text-gray-400">SANKAKU</p>
-                </div>
-              </div>
-              <p className="text-gray-400 mb-6 max-w-md">
-                정통 일본 라멘의 맛을 그대로 담아 여러분께 특별한 식사 경험을
-                제공합니다.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">빠른 링크</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a
-                    href="/brand-story"
-                    className="hover:text-white transition-colors"
-                  >
-                    브랜드 스토리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/menu"
-                    className="hover:text-white transition-colors"
-                  >
-                    메뉴
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/store-info"
-                    className="hover:text-white transition-colors"
-                  >
-                    매장안내
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/customer-voice"
-                    className="hover:text-white transition-colors"
-                  >
-                    고객의 소리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/franchise"
-                    className="hover:text-white transition-colors"
-                  >
-                    창업안내
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">연락처</h4>
-              <div className="space-y-3 text-gray-400">
-                <div>📞 02-1234-5678</div>
-                <div>📧 info@sankaku.kr</div>
-                <div>📍 서울특별시 강남구</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 산카쿠. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      </section>
     </motion.div>
   );
 }

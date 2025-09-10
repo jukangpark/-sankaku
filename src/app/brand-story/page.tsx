@@ -54,8 +54,10 @@ export default function BrandStory() {
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             variants={itemVariants}
           >
-            산카쿠의 시작부터 현재까지, 정통 일본 라멘의 맛을 전하는 우리의
-            이야기입니다.
+            2023년 12월, 광주 전대 앞 작은 매장에서 시작한 '산카쿠'는
+            <br />
+            정성 가득한 한 끼를 더 많은 사람들과 나누고 싶은 마음으로
+            탄생했습니다.
           </motion.p>
         </div>
       </section>
@@ -69,17 +71,30 @@ export default function BrandStory() {
           >
             <motion.div variants={itemVariants}>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                정통의 맛을 찾아서
+                '산카쿠(△)'의 의미
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                2010년, 일본 도쿄에서 시작된 산카쿠의 여정은 정통 라멘의 맛을
-                찾는 열정으로 시작되었습니다. 3대째 이어져 온 가업의 비법을
-                배우고, 한국의 입맛에 맞게 조화롭게 발전시켜 왔습니다.
+                🍙 산카쿠 – 정성 가득한 삼각의 맛 <br />
+                '산카쿠(△)'는 일본어로 삼각형을 뜻하며,
+                <br />한 손에 쥘 수 있는 삼각형 오니기리에 담긴 세 가지 약속을
+                의미합니다.
               </p>
-              <p className="text-lg text-gray-600">
-                매일 아침 직접 반죽하는 신선한 면발과 24시간 이상 끓여 만드는
-                정통 방식의 국물. 이것이 산카쿠가 지켜온 가장 소중한 가치입니다.
-              </p>
+              <div className="bg-gray-50 rounded-2xl p-8 mb-6">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+                  <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg font-bold">맛</span>
+                  </div>
+                  <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg font-bold">정성</span>
+                  </div>
+                  <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg font-bold">가격</span>
+                  </div>
+                </div>
+                <p className="text-lg text-gray-600 text-center">
+                  이 세 가지 모두 놓치지 않겠다는 우리의 다짐입니다.
+                </p>
+              </div>
             </motion.div>
             <motion.div
               className="relative h-96 rounded-2xl overflow-hidden"
@@ -97,54 +112,38 @@ export default function BrandStory() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24 bg-gray-50">
+      {/* Philosophy Section */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-20" variants={itemVariants}>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              우리의 가치
+              우리의 철학
             </h2>
             <p className="text-xl text-gray-600">
-              산카쿠가 추구하는 세 가지 핵심 가치
+              프랜차이즈 그 이상의 브랜드를 꿈꾸는 산카쿠
             </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-3 gap-12"
-            variants={containerVariants}
+            className="bg-white rounded-2xl p-12 text-center"
+            variants={itemVariants}
           >
-            <motion.div className="text-center" variants={itemVariants}>
-              <div className="w-20 h-20 bg-black rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-3xl">🎯</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">정직함</h3>
-              <p className="text-gray-600">
-                최고급 재료만을 사용하고, 정직한 가격으로 정통의 맛을
-                제공합니다.
-              </p>
-            </motion.div>
-
-            <motion.div className="text-center" variants={itemVariants}>
-              <div className="w-20 h-20 bg-black rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-3xl">❤️</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">정성</h3>
-              <p className="text-gray-600">
-                매일 아침 직접 반죽하는 면발처럼, 모든 과정에 정성을 담아
-                조리합니다.
-              </p>
-            </motion.div>
-
-            <motion.div className="text-center" variants={itemVariants}>
-              <div className="w-20 h-20 bg-black rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-3xl">🌟</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">전통</h3>
-              <p className="text-gray-600">
-                일본의 전통 레시피를 그대로 지켜가며, 정통 라멘의 맛을
-                보존합니다.
-              </p>
-            </motion.div>
+            <p className="text-xl text-gray-700 leading-relaxed mb-8">
+              우리는 프랜차이즈 그 이상의 브랜드를 꿈꿉니다.
+              <br />그 시작은 <strong>'정성'</strong>입니다.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              누구나 바쁜 일상 속에서 부담 없이
+              <br />
+              든든하고 따뜻한 한 끼를 즐기길 바라는 마음.
+              <br />
+              산카쿠는 그 마음 하나로 오늘도 정성을 쌓아갑니다.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              이제 막 시작한 브랜드지만,
+              <br />
+              진짜 좋은 음식을 만들겠다는 마음만큼은 오래전부터 준비했습니다.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -156,172 +155,80 @@ export default function BrandStory() {
             className="text-4xl font-bold text-gray-900 text-center mb-16"
             variants={itemVariants}
           >
-            산카쿠의 발자취
+            산카쿠의 성장 스토리
           </motion.h2>
 
-          <motion.div className="space-y-12" variants={containerVariants}>
+          <motion.div className="space-y-8" variants={containerVariants}>
             <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
+              className="bg-gray-50 rounded-2xl p-8"
               variants={timelineVariants}
             >
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2010</h3>
-                <p className="text-gray-600">
-                  일본 도쿄에서 라멘 제조 기술을 배우고, 한국에서 첫 번째 매장을
-                  오픈했습니다.
-                </p>
-              </div>
-              <div className="md:w-1/2">
-                <div className="bg-gray-100 h-48 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">🏪</span>
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                2023년 12월
+              </h3>
+              <p className="text-gray-600">
+                <strong>광주 전대 본점 오픈</strong>
+                <br />
+                매일 웨이팅이 생기는 전대 앞 대표 맛집으로 자리잡았습니다.
+              </p>
             </motion.div>
 
             <motion.div
-              className="flex flex-col md:flex-row-reverse items-center gap-8"
+              className="bg-gray-50 rounded-2xl p-8"
               variants={timelineVariants}
             >
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2015</h3>
-                <p className="text-gray-600">
-                  전국 10개 매장으로 확장하며, 정통 라멘의 맛을 더 많은
-                  고객들에게 전했습니다.
-                </p>
-              </div>
-              <div className="md:w-1/2">
-                <div className="bg-gray-100 h-48 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">📈</span>
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                2024년 3월
+              </h3>
+              <p className="text-gray-600">
+                <strong>대전 충남대점 오픈</strong>
+                <br />두 번째 직영점으로 오픈과 동시에 웨이팅 줄이 끊이지 않는
+                사랑을 받고 있습니다.
+              </p>
             </motion.div>
 
             <motion.div
-              className="flex flex-col md:flex-row items-center gap-8"
+              className="bg-gray-50 rounded-2xl p-8"
               variants={timelineVariants}
             >
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2020</h3>
-                <p className="text-gray-600">
-                  창업 시스템을 구축하여 프랜차이즈 사업을 시작하고, 더 많은
-                  분들에게 창업 기회를 제공했습니다.
-                </p>
-              </div>
-              <div className="md:w-1/2">
-                <div className="bg-gray-100 h-48 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">🚀</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col md:flex-row-reverse items-center gap-8"
-              variants={timelineVariants}
-            >
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2024</h3>
-                <p className="text-gray-600">
-                  현재 전국 50개 매장으로 성장하며, 정통 일본 라멘의 맛을
-                  대표하는 브랜드로 자리매김했습니다.
-                </p>
-              </div>
-              <div className="md:w-1/2">
-                <div className="bg-gray-100 h-48 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">🏆</span>
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                2024년 5월
+              </h3>
+              <p className="text-gray-600">
+                <strong>수원 인계점 오픈</strong>
+                <br />
+                산카쿠의 또 다른 도전을 알리는 공간으로, 더 많은 지역에서 따뜻한
+                한 끼를 전하고 있습니다.
+              </p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
+      {/* Promise Section */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src="/SANKAKU_LOGO.jpg"
-                    alt="산카쿠 로고"
-                    fill
-                    className="object-cover rounded-lg"
-                    sizes="40px"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">산카쿠</h3>
-                  <p className="text-sm text-gray-400">SANKAKU</p>
-                </div>
-              </div>
-              <p className="text-gray-400 mb-6 max-w-md">
-                정통 일본 라멘의 맛을 그대로 담아 여러분께 특별한 식사 경험을
-                제공합니다.
+          <motion.div
+            className="bg-white rounded-2xl p-12 text-center"
+            variants={itemVariants}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              이 작은 삼각형 속에 담긴 우직한 철학
+            </h2>
+            <p className="text-xl text-gray-700 leading-relaxed mb-8">
+              이 작은 삼각형 속에 담긴
+              <br />
+              우직한 철학을 믿고 따라와 주셔서 감사합니다.
+            </p>
+            <div className="bg-black text-white rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-4">앞으로도,</h3>
+              <p className="text-xl">
+                산카쿠는 언제나 <strong>정직하게, 따뜻하게, 정성스럽게.</strong>
               </p>
             </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">빠른 링크</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a
-                    href="/brand-story"
-                    className="hover:text-white transition-colors"
-                  >
-                    브랜드 스토리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/menu"
-                    className="hover:text-white transition-colors"
-                  >
-                    메뉴
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/store-info"
-                    className="hover:text-white transition-colors"
-                  >
-                    매장안내
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/customer-voice"
-                    className="hover:text-white transition-colors"
-                  >
-                    고객의 소리
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/franchise"
-                    className="hover:text-white transition-colors"
-                  >
-                    창업안내
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">연락처</h4>
-              <div className="space-y-3 text-gray-400">
-                <div>📞 02-1234-5678</div>
-                <div>📧 info@sankaku.kr</div>
-                <div>📍 서울특별시 강남구</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 산카쿠. All rights reserved.</p>
-          </div>
+          </motion.div>
         </div>
-      </footer>
+      </section>
     </motion.div>
   );
 }
