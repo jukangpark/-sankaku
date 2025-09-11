@@ -2,7 +2,72 @@
 
 import Navigation from "@/components/Navigation";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useAnimation,
+} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+// 카운트업 애니메이션 컴포넌트
+const CountUpAnimation = ({
+  endValue,
+  duration = 2,
+  suffix = "",
+  prefix = "",
+}: {
+  endValue: number;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
+}) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const startTime = Date.now();
+          const startValue = 0;
+
+          const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / (duration * 1000), 1);
+
+            // easeOut 함수
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentValue = startValue + (endValue - startValue) * easeOut;
+
+            setCount(currentValue);
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [endValue, duration]);
+
+  return (
+    <div ref={ref}>
+      {prefix}
+      {Math.round(count)}
+      {suffix}
+    </div>
+  );
+};
 
 export default function Franchise() {
   const containerVariants = {
@@ -42,25 +107,25 @@ export default function Franchise() {
 
   const performanceData = [
     {
-      title: "11회전",
+      title: <CountUpAnimation endValue={11} suffix="회전" />,
       subtitle: "테이블 회전율",
       note: "*25년 1월 광주 전대점",
       icon: "🔄",
     },
     {
-      title: "30.7%",
+      title: <CountUpAnimation endValue={30.7} suffix="%" />,
       subtitle: "평균 수익률",
       note: "*본점기준이며 가맹점은 다를 수 있습니다.",
       icon: "📈",
     },
     {
-      title: "314만원",
+      title: <CountUpAnimation endValue={314} suffix="만원" />,
       subtitle: "일 매출",
       note: "*25년 4월 대전 충남대점",
       icon: "💰",
     },
     {
-      title: "240%",
+      title: <CountUpAnimation endValue={240} suffix="%" />,
       subtitle: "타 브랜드 대비 마진율",
       note: "*25년 1월 매출 자료 집계 기준",
       icon: "📊",
