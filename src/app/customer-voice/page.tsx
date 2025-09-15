@@ -2,8 +2,43 @@
 
 import { motion } from "framer-motion";
 import Banner from "@/components/Banner";
+import ReviewCard from "@/components/ReviewCard";
+import reviewData from "@/constants/reviewData";
+import reviewStats from "@/constants/reviewStats";
+import ProgressBar from "@/components/ProgressBar";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomerVoice() {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [activeTab, setActiveTab] = useState("전대본점");
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  const tabs = [
+    { id: "전대본점", name: "전대 본점", enabled: true },
+    { id: "인계점", name: "인계점", enabled: false },
+    { id: "충대점", name: "충대점", enabled: false },
+  ];
+
+  // 외부 클릭 감지
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(event.target as Node)
+      ) {
+        setShowTooltip(false);
+      }
+    };
+
+    if (showTooltip) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showTooltip]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,65 +66,9 @@ export default function CustomerVoice() {
     },
   };
 
-  const reviews = [
-    {
-      name: "김철수",
-      rating: 5,
-      date: "2024.01.15",
-      content:
-        "정말 맛있는 라멘을 먹었습니다! 국물이 진하고 면발도 쫄깃해서 완벽했어요. 다음에 또 방문하고 싶습니다.",
-      menu: "돈코츠 라멘",
-      store: "강남점",
-    },
-    {
-      name: "이영희",
-      rating: 5,
-      date: "2024.01.10",
-      content:
-        "일본에서 먹던 맛 그대로네요. 특히 오니기리가 정말 맛있었습니다. 친절한 서비스도 감동이었어요.",
-      menu: "연어 오니기리",
-      store: "홍대점",
-    },
-    {
-      name: "박민수",
-      rating: 5,
-      date: "2024.01.08",
-      content:
-        "우동이 정말 쫄깃하고 맛있었습니다. 가격도 합리적이고 분위기도 좋아서 만족스러웠어요.",
-      menu: "카케 우동",
-      store: "부산점",
-    },
-    {
-      name: "최지영",
-      rating: 5,
-      date: "2024.01.05",
-      content:
-        "친구들과 함께 방문했는데 모두가 만족했어요. 특히 스파이시 라멘의 매운맛이 정말 일품이었습니다.",
-      menu: "스파이시 라멘",
-      store: "강남점",
-    },
-    {
-      name: "정현우",
-      rating: 5,
-      date: "2024.01.03",
-      content:
-        "매장이 깔끔하고 음식도 맛있었습니다. 다음에 가족들과 함께 방문하고 싶어요.",
-      menu: "미소 라멘",
-      store: "홍대점",
-    },
-    {
-      name: "한소영",
-      rating: 5,
-      date: "2024.01.01",
-      content:
-        "새해 첫날 방문했는데 정말 좋은 추억이 되었어요. 맛있는 음식과 따뜻한 분위기가 인상적이었습니다.",
-      menu: "차슈 라멘",
-      store: "부산점",
-    },
-  ];
-
   const averageRating =
-    reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
+    reviewData.reduce((acc, review) => acc + review.rating, 0) /
+    reviewData.length;
 
   return (
     <motion.div
@@ -163,40 +142,182 @@ export default function CustomerVoice() {
             </p>
           </motion.div>
 
+          {/* Tab Navigation */}
+          <section>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                className="flex justify-center"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <div className="flex bg-gray-200 rounded-lg p-1">
+                  {tabs.map((tab) => (
+                    <motion.button
+                      key={tab.id}
+                      onClick={() => tab.enabled && setActiveTab(tab.id)}
+                      disabled={!tab.enabled}
+                      variants={itemVariants}
+                      className={`
+                    px-6 py-3 rounded-md font-semibold text-sm transition-all duration-300
+                    ${
+                      activeTab === tab.id
+                        ? "bg-black text-white shadow-md"
+                        : tab.enabled
+                        ? "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+                        : "text-gray-400 cursor-not-allowed opacity-50"
+                    }
+                  `}
+                      whileHover={
+                        tab.enabled && activeTab !== tab.id
+                          ? { scale: 1.05 }
+                          : {}
+                      }
+                      whileTap={
+                        tab.enabled && activeTab !== tab.id
+                          ? { scale: 0.95 }
+                          : {}
+                      }
+                    >
+                      {tab.name}
+                      {!tab.enabled && (
+                        <span className="ml-2 text-xs bg-gray-300 text-gray-500 px-2 py-0.5 rounded-full">
+                          준비중
+                        </span>
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-xl shadow-lg p-8 mb-12"
           >
-            {reviews.map((review, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <div className="mb-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <h2 className="text-2xl font-bold text-gray-800">
+                    이런 점이 좋았어요.
+                  </h2>
+                  <div className="relative" ref={tooltipRef}>
+                    <button
+                      onClick={() => setShowTooltip(!showTooltip)}
+                      className="w-6 h-6 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors duration-200"
+                      aria-label="도움말"
+                    >
+                      <span className="text-gray-600 text-sm font-bold">?</span>
+                    </button>
+
+                    {/* 툴팁 */}
+                    {showTooltip && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-8 left-1/2 transform -translate-x-1/2 w-80 bg-gray-800 text-white text-sm rounded-lg p-4 shadow-lg z-10"
+                      >
+                        {/* X 버튼 */}
+                        <button
+                          onClick={() => setShowTooltip(false)}
+                          className="absolute top-2 right-2 w-5 h-5 rounded-full bg-gray-600 hover:bg-gray-500 flex items-center justify-center transition-colors duration-200"
+                          aria-label="닫기"
+                        >
+                          <span className="text-white text-xs font-bold">
+                            ×
+                          </span>
+                        </button>
+
+                        <div className="text-center pr-6">
+                          <p className="mb-2">
+                            네이버 예약, 주문, 결제내역, 영수증 등으로 인증한
+                            방문자들이 해당 장소에 대해 최대 5개 까지 선택한
+                            키워드 통계 결과입니다.
+                          </p>
+                          <p className="text-gray-300 text-xs">
+                            업데이트 주기: 하루 단위
+                          </p>
+                        </div>
+                        {/* 화살표 */}
+                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-gray-800"></div>
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  <span className="text-green-600 font-bold">✅ 849회</span>{" "}
+                  828명 참여
+                </p>
+                <motion.a
+                  href="https://map.naver.com/p/search/%EC%82%B0%EC%B9%B4%EC%BF%A0%20%EC%A0%84%EB%8C%80%EB%B3%B8%EC%A0%90/place/1477045231?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/review?additionalHeight=76&fromPanelNum=1&locale=ko&searchText=%EC%82%B0%EC%B9%B4%EC%BF%A0%20%EC%A0%84%EB%8C%80%EB%B3%B8%EC%A0%90&svcName=map_pcv5&timestamp=202509151958&additionalHeight=76&timestamp=202509151958&locale=ko&svcName=map_pcv5&searchText=%EC%82%B0%EC%B9%B4%EC%BF%A0%20%EC%A0%84%EB%8C%80%EB%B3%B8%EC%A0%90&fromPanelNum=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                  네이버 리뷰 보러가기
+                </motion.a>
+              </div>
+            </motion.div>
+
+            <div className="space-y-2">
+              {reviewStats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <ProgressBar
+                    label={stat.label}
+                    value={stat.value}
+                    maxValue={stat.maxValue}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* 리뷰 카드들 */}
+          <motion.div className="grid grid-cols-1" variants={containerVariants}>
+            {reviewData.map((review, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg"
-                variants={reviewCardVariants}
+                variants={itemVariants}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">
-                      {review.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">{review.date}</p>
-                  </div>
-                  <div className="text-yellow-500">
-                    {"★".repeat(review.rating)}
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm mr-2">
-                    {review.menu}
-                  </span>
-                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                    {review.store}
-                  </span>
-                </div>
-
-                <p className="text-gray-600 leading-relaxed">
-                  {review.content}
-                </p>
+                <ReviewCard
+                  author={review.author}
+                  content={review.content}
+                  rating={review.rating}
+                  visitDate={review.visitDate}
+                  visitCount={review.visitCount}
+                  verificationMethod={review.verificationMethod}
+                  tags={review.tags}
+                />
               </motion.div>
             ))}
           </motion.div>
