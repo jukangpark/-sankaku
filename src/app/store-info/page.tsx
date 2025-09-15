@@ -1,9 +1,9 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import stores from "@/app/constants/stores";
+import stores from "@/constants/stores";
+import Banner from "@/components/Banner";
 
 export default function StoreInfo() {
   const containerVariants = {
@@ -40,25 +40,11 @@ export default function StoreInfo() {
       initial="hidden"
       animate="visible"
     >
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            variants={itemVariants}
-          >
-            매장안내
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-            variants={itemVariants}
-          >
-            전국 각지의 산카쿠 매장을 찾아보세요
-          </motion.p>
-        </div>
-      </section>
+      <Banner
+        title="매장안내"
+        description="전국 각지의 산카쿠 매장을 찾아보세요"
+      />
 
       {/* Store List */}
       <section className="py-24 bg-white">

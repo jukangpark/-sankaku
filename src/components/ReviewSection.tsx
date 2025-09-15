@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import ReviewCard from "./ReviewCard";
-import reviewData from "@/app/constants/reviewData";
+import reviewData from "@/constants/reviewData";
 
 const ReviewSection = () => {
   const containerVariants = {

@@ -1,8 +1,7 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Banner from "@/components/Banner";
 
 export default function CustomerVoice() {
   const containerVariants = {
@@ -99,25 +98,11 @@ export default function CustomerVoice() {
       initial="hidden"
       animate="visible"
     >
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            variants={itemVariants}
-          >
-            고객의 소리
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-            variants={itemVariants}
-          >
-            산카쿠를 방문해주신 고객님들의 소중한 후기를 소개합니다
-          </motion.p>
-        </div>
-      </section>
+      <Banner
+        title="고객의 소리"
+        description="산카쿠를 방문해주신 고객님들의 소중한 후기를 소개합니다"
+      />
 
       {/* Rating Summary */}
       <section className="py-24 bg-white">

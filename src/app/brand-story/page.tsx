@@ -1,8 +1,8 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Banner from "@/components/Banner";
 
 export default function BrandStory() {
   const containerVariants = {
@@ -39,28 +39,11 @@ export default function BrandStory() {
       initial="hidden"
       animate="visible"
     >
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            variants={itemVariants}
-          >
-            브랜드 스토리
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-            variants={itemVariants}
-          >
-            2023년 12월, 광주 전대 앞 작은 매장에서 시작한 '산카쿠'는
-            <br />
-            정성 가득한 한 끼를 더 많은 사람들과 나누고 싶은 마음으로
-            탄생했습니다.
-          </motion.p>
-        </div>
-      </section>
+      <Banner
+        title="브랜드 스토리"
+        description="2023년 12월, 광주 전대 앞 작은 매장에서 시작한 '산카쿠'는 정성 가득한 한 끼를 더 많은 사람들과 나누고 싶은 마음으로 탄생했습니다."
+      />
 
       {/* Story Section */}
       <section className="py-24 bg-white">

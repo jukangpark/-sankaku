@@ -1,9 +1,9 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import menuCategories from "@/app/constants/menuCategories";
+import menuCategories from "@/constants/menuCategories";
+import Banner from "@/components/Banner";
 
 export default function Menu() {
   const containerVariants = {
@@ -40,26 +40,11 @@ export default function Menu() {
       initial="hidden"
       animate="visible"
     >
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            variants={itemVariants}
-          >
-            메뉴
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-            variants={itemVariants}
-          >
-            정통 일본 라멘부터 다양한 메뉴까지, 산카쿠만의 특별한 맛을
-            경험해보세요.
-          </motion.p>
-        </div>
-      </section>
+      <Banner
+        title="메뉴"
+        description="정통 일본 라멘부터 다양한 메뉴까지, 산카쿠만의 특별한 맛을 경험해보세요."
+      />
 
       {/* Menu Image */}
       <section className="py-16 bg-white">

@@ -1,4 +1,4 @@
-import { TAG_MAPPING } from "@/app/constants/reviewStats";
+import { TAG_MAPPING } from "@/constants/reviewStats";
 
 interface ReviewCardProps {
   author: string;
