@@ -1,0 +1,89 @@
+---
+description: "Sankaku - Next.js 15 + TypeScript + Tailwind CSS 프로젝트"
+globs: ["**/*.tsx", "**/*.ts", "**/*.js", "**/*.jsx", "**/*.css"]
+alwaysApply: true
+---
+
+# Sankaku 프로젝트 코딩 규칙
+
+## 기술 스택
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS v4
+- **Animation**: Framer Motion
+- **Package Manager**: Yarn
+
+## 코딩 스타일
+
+### TypeScript
+
+- strict 모드 준수
+- 모든 컴포넌트와 함수에 명시적 타입 지정
+- `any` 타입 사용 금지
+- 인터페이스는 `I` 접두사 사용 (예: `IUserData`)
+- 타입은 PascalCase로 명명
+
+### React/Next.js
+
+- 함수형 컴포넌트만 사용
+- React 19의 새로운 기능 활용
+- App Router 구조 준수
+- Server Components 우선 사용, 필요시 Client Components
+- `"use client"` 지시어는 최소한으로 사용
+
+### 네이밍 컨벤션
+
+- **컴포넌트**: PascalCase (예: `Navigation.tsx`, `QuickFranchiseInquiry.tsx`)
+- **함수/변수**: camelCase (예: `handleClick`, `userData`)
+- **상수**: UPPER_SNAKE_CASE (예: `API_BASE_URL`)
+- **파일명**: PascalCase (컴포넌트), camelCase (유틸리티)
+- **폴더명**: kebab-case (예: `brand-story`, `customer-voice`)
+
+## 파일 구조
+
+```
+src/
+├── app/                 # Next.js App Router 페이지
+│   ├── (pages)/        # 페이지 컴포넌트
+│   └── globals.css     # 전역 스타일
+├── components/         # 재사용 가능한 컴포넌트
+└── lib/               # 유틸리티 함수 및 설정
+```
+
+## Tailwind CSS 규칙
+
+- 커스텀 컬러 팔레트 사용:
+  - `primary-black`, `primary-red`
+  - `accent-gray`
+  - `text-dark`, `text-light`
+  - `border`
+- 반응형 디자인: mobile-first 접근
+- Noto Sans KR 폰트 사용
+- 애니메이션은 Tailwind의 `animate-` 클래스 또는 Framer Motion 사용
+
+## 컴포넌트 작성 규칙
+
+- 하나의 컴포넌트는 하나의 파일
+- Props 인터페이스는 컴포넌트와 같은 파일에 정의
+- 기본 export 사용
+- 컴포넌트명과 파일명 일치
+
+## 성능 최적화
+
+- 이미지는 Next.js Image 컴포넌트 사용
+- 동적 import로 코드 스플리팅
+- 불필요한 re-render 방지 (React.memo, useMemo, useCallback 적절히 사용)
+
+## 에러 처리
+
+- try-catch 블록으로 에러 핸들링
+- 사용자 친화적인 에러 메시지 제공
+- 개발 환경에서는 상세한 에러 정보 표시
+
+## 접근성 (A11y)
+
+- 시맨틱 HTML 태그 사용
+- alt 속성 필수
+- 키보드 네비게이션 지원
+- ARIA 속성 적절히 사용
