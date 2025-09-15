@@ -1,14 +1,10 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
 import BrandSlider from "@/components/BrandSlider";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import slideTexts from "../constants/slideTexts";
 import ReviewSection from "@/components/ReviewSection";
-import CountUpAnimation from "@/components/CountUpAnimation";
-import stores from "@/constants/stores";
 import StoreShowCaseSection from "@/components/StoreShowCaseSection";
 import AwardSection from "@/components/AwardSection";
 import FeatureSection from "@/components/FeatureSection";
@@ -93,8 +89,8 @@ export default function Home() {
 
       <ReviewSection />
 
-      {/* Parallax Section */}
-      <section className="relative h-[400px] overflow-hidden">
+      {/* Parallax Section - Desktop Only */}
+      <section className="relative h-[400px] overflow-hidden hidden md:block">
         <div
           className="absolute inset-0 w-full h-[400px] bg-cover bg-center bg-fixed"
           style={{

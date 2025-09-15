@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 
 const FranchiseGrowthSection = ({
   containerVariants,
@@ -8,6 +16,66 @@ const FranchiseGrowthSection = ({
   containerVariants: any;
   itemVariants: any;
 }) => {
+  // 차트 데이터 정의
+  const chartData = [
+    { year: "2019", stores: 2, displayValue: "2호점" },
+    { year: "2020", stores: 3, displayValue: "3호점" },
+    { year: "2021", stores: 10, displayValue: "10호점" },
+    { year: "2022-1", stores: 27, displayValue: "27호점" },
+    { year: "2022-2", stores: 49, displayValue: "49호점" },
+    { year: "2023-1", stores: 89, displayValue: "89호점" },
+    { year: "2023-2", stores: 133, displayValue: "133호점" },
+    { year: "2024", stores: 205, displayValue: "205호점" },
+  ];
+
+  // 커스텀 도트 컴포넌트
+  const CustomDot = (props: {
+    cx?: number;
+    cy?: number;
+    payload?: { displayValue: string };
+    index?: number;
+  }) => {
+    const { cx, cy, payload } = props;
+
+    if (!cx || !cy || !payload) return null;
+
+    return (
+      <g>
+        {/* 도트 포인트 */}
+        <circle
+          cx={cx}
+          cy={cy}
+          r={6}
+          fill="#000000"
+          stroke="#ffffff"
+          strokeWidth={2}
+        />
+
+        {/* 라벨 배경 (가독성을 위한 반투명 배경) */}
+        <rect
+          x={cx - 20}
+          y={cy - 25}
+          width={45}
+          height={26}
+          fill="rgba(0, 0, 0, 0.8)"
+          rx={8}
+          ry={8}
+        />
+
+        {/* 라벨 텍스트 */}
+        <text
+          x={cx}
+          y={cy - 12}
+          textAnchor="middle"
+          className="text-xs font-bold fill-white"
+          dominantBaseline="central"
+        >
+          {payload.displayValue}
+        </text>
+      </g>
+    );
+  };
+
   return (
     <section className="py-24 relative">
       {/* Background Image */}
@@ -43,9 +111,9 @@ const FranchiseGrowthSection = ({
             </motion.p>
           </motion.div>
 
-          {/* Right - Line Chart */}
+          {/* Right - Recharts Line Chart */}
           <motion.div
-            className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-8 border border-white border-opacity-30"
+            className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-4 border border-white border-opacity-30"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -57,127 +125,53 @@ const FranchiseGrowthSection = ({
                 가맹점 성장 현황
               </h3>
 
-              {/* SVG Line Chart */}
-              <svg className="w-full h-64" viewBox="0 0 400 220">
-                {/* Grid Lines */}
-                <defs>
-                  <pattern
-                    id="grid"
-                    width="40"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
+              {/* Recharts Line Chart */}
+              <motion.div
+                className="h-64"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={chartData}
+                    margin={{
+                      top: 0,
+                      right: 25,
+                      left: 0,
+                      bottom: 0,
+                    }}
                   >
-                    <path
-                      d="M 40 0 L 0 0 0 20"
-                      fill="none"
-                      stroke="#e5e7eb"
-                      strokeWidth="0.5"
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="rgba(255, 255, 255, 0.2)"
                     />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-
-                {/* Y-axis labels */}
-                <text x="10" y="35" className="text-xs fill-black">
-                  250
-                </text>
-                <text x="10" y="75" className="text-xs fill-black">
-                  200
-                </text>
-                <text x="10" y="115" className="text-xs fill-black">
-                  150
-                </text>
-                <text x="10" y="155" className="text-xs fill-black">
-                  100
-                </text>
-                <text x="10" y="195" className="text-xs fill-black">
-                  50
-                </text>
-                <text x="15" y="215" className="text-xs fill-black">
-                  0
-                </text>
-
-                {/* X-axis labels */}
-                <text x="40" y="215" className="text-xs fill-black">
-                  2019
-                </text>
-                <text x="85" y="215" className="text-xs fill-black">
-                  2020
-                </text>
-                <text x="130" y="215" className="text-xs fill-black">
-                  2021
-                </text>
-                <text x="220" y="215" className="text-xs fill-black">
-                  2022
-                </text>
-                <text x="310" y="215" className="text-xs fill-black">
-                  2023
-                </text>
-                <text x="355" y="215" className="text-xs fill-black">
-                  2024
-                </text>
-
-                {/* Line Chart Path */}
-                <motion.path
-                  d="M 45,198 L 90,196 L 135,186 L 175,168 L 225,150 L 275,119 L 325,83 L 355,35"
-                  fill="none"
-                  stroke="#000000"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
-                  viewport={{ once: true }}
-                />
-
-                {/* Data Points */}
-                {[
-                  { x: 45, y: 198, value: 2 },
-                  { x: 90, y: 196, value: 3 },
-                  { x: 135, y: 186, value: 10 },
-                  { x: 175, y: 168, value: 27 },
-                  { x: 225, y: 150, value: 49 },
-                  { x: 275, y: 119, value: 89 },
-                  { x: 325, y: 83, value: 133 },
-                  { x: 355, y: 35, value: 205 },
-                ].map((point, index) => (
-                  <motion.g key={index}>
-                    <motion.circle
-                      cx={point.x}
-                      cy={point.y}
-                      r="5"
-                      fill="#000000"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ delay: index * 0.2 + 0.5, duration: 0.3 }}
-                      viewport={{ once: true }}
+                    <XAxis
+                      dataKey="year"
+                      stroke="gray"
+                      fontSize={12}
+                      tickFormatter={(value) => {
+                        if (value.includes("-")) {
+                          return value.split("-")[0];
+                        }
+                        return value;
+                      }}
                     />
-                    <motion.text
-                      x={point.x}
-                      y={point.y - 12}
-                      className="text-xs font-bold fill-gray-900"
-                      textAnchor="middle"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: index * 0.2 + 0.8, duration: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      {point.value}호점
-                    </motion.text>
-                  </motion.g>
-                ))}
-              </svg>
-
-              {/* Chart Legend */}
-              <div className="mt-4 text-center">
-                <div className="flex items-center justify-center gap-2">
-                  <div className="w-4 h-0.5 bg-black"></div>
-                  <span className="text-sm text-gray-600">
-                    가맹점 수 증가 추이
-                  </span>
-                </div>
-              </div>
+                    <YAxis stroke="gray" fontSize={12} domain={[0, 250]} />
+                    <Line
+                      type="monotone"
+                      dataKey="stores"
+                      stroke="#000000"
+                      strokeWidth={2}
+                      dot={<CustomDot />}
+                      activeDot={false}
+                      animationDuration={2000}
+                      animationBegin={500}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </motion.div>
             </div>
           </motion.div>
         </div>
